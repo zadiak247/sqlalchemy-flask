@@ -43,3 +43,11 @@ def add():
        session.commit()
        return redirect('/')
     return render_template('add.html')
+
+
+@app.route('/delete/<int:id>')
+def delete(id):
+   post = session.query(Post).filter_by(id=id).first()
+   session.delete(post)
+   session.commit()
+   return redirect('/')

@@ -10,6 +10,7 @@
     {% for i in posts %}
         <h2>{{ i.title }}</h2>
         <p>{{ i.content }}</p>
+        <a href="/delete/{{ i.id }}">Удалить</a>
     {% endfor %}
     <a href="/add">Добавить запись</a>
 </body>
