@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, Column, Integer, String, Text
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import declarative_base
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 # Настройка базы данных
 engine = create_engine('sqlite:///blog.db')
@@ -41,4 +41,5 @@ def add():
        post = Post(title = title, content = content)
        session.add(post)
        session.commit()
+       return redirect('/')
     return render_template('add.html')
