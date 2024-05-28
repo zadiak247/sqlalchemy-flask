@@ -4,13 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    }
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    color: #666;
+    font-size: 1.2em;
+    text-align: center;
+}
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+input {
+    background-color: #e2dede;
+    border: #000000 3px solid;
+    border-radius: 7px;
+    padding: 5px;
+    color: #000000;
+    transition: color 0.3s;
+}
+input:hover {
+    color: #0056b3;
+}
+    </style>
 </head>
 <body>
+    <div class="container">
     <h1>Добавить запись</h1>
     <form action="/add" method="post">
         <input type="text" name="title" placeholder="Введите название новости">
         <input type="text" name="content" placeholder="Введите текст новости">
         <input type="submit" value="Добавить!">
     </form>
+    </div>
 </body>
 </html>

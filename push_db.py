@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import declarative_base
 
 # Настройка базы данных
-engine = create_engine('sqlite:///blog.db')
+engine = create_engine('sqlite:///blob.db')
 Base = declarative_base()
 
 class Post(Base):
@@ -22,7 +22,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
-for i in range(1, 5):
+for i in range(1, 6):
     my_first_post = Post(title = f'Привет Мир {i}!', content = 'Содержимое записи привет мир!')
     session.add(my_first_post)
     session.commit()
